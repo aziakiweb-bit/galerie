@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma Galerie Personnelle - Butembo / Goma</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8;color:#222;text-align:center}
+header{background:#0a2a5e;color:white;padding:30px 15px}
+header h1{margin:0;font-size:26px}
+header p{color:#f5d67b}
+.container{padding:20px;max-width:800px;margin:auto}
+.carte{background:white;border-radius:15px;padding:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.carte img{width:100%;border-radius:12px;cursor:pointer}
+.carte img:hover{opacity:0.9}
+.carte h2{color:#0a2a5e}
+.clic{font-size:13px;color:#666}
+footer{background:#0a2a5e;color:white;padding:15px}
+/* Fenêtre pour voir en grand */
+#grand{ display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000; }
+#grand img{ max-width:95%; max-height:90%; border-radius:10px; }
+#grand span{ position:absolute; top:15px; right:20px; color:white; font-size:35px; cursor:pointer; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>MA GALERIE PERSONNELLE</h1>
+<h2>METS ICI TON NOM COMPLET</h2>
+<p>Butembo / Goma</p>
+<p>Bienvenue dans ma galerie personnelle. Clique sur une photo pour la voir en grand.</p>
+</header>
+
+<div class="container">
+
+<div class="carte">
+<img src="https://res.cloudinary.com/cchcogkj/image/upload/v1794489489/IMG-20261112-WA0042.jpg" alt="Photo 1 - Galerie personnelle" onclick="ouvrir(this.src)">
+<p class="clic">👆 Clique sur la photo pour voir en grand</p>
+<h2>1. Ma promenade en plein air</h2>
+<p>Sur cette photo, je suis en veste grise, en plein air. J'aime la nature, le calme et les promenades. C'est un moment simple mais qui me rend heureux.</p>
+</div>
+
+<div class="carte">
+<img src="https://res.cloudinary.com/cchcogkj/image/upload/v1794489489/IMG-20261112-WA0043.jpg" alt="Photo 2 - Galerie personnelle" onclick="ouvrir(this.src)">
+<p class="clic">👆 Clique sur la photo pour voir en grand</p>
+<h2>2. Mon style élégant la nuit</h2>
+<p>Sur cette photo, je porte une chemise blanche et une veste à la main, la nuit. J'aime être propre, élégant et respectueux. L'élégance, c'est aussi une façon de montrer qui on est.</p>
+</div>
+
+<div class="carte">
+<img src="https://res.cloudinary.com/cchcogkj/image/upload/v1794489489/IMG-20261112-WA0017.jpg" alt="Photo 3 - Galerie personnelle" onclick="ouvrir(this.src)">
+<p class="clic">👆 Clique sur la photo pour voir en grand</p>
+<h2>3. Mon regard vers l'avenir</h2>
+<p>Sur cette photo, je regarde au loin, avec ma veste sur l'épaule. Je regarde vers l'avenir avec espoir. Mon rêve est de réussir, de rendre fière ma famille et de devenir un homme fort et respecté.</p>
+</div>
+
+</div>
+
+<footer>
+<p>METS ICI TON NOM - Ma Galerie Personnelle - Butembo / Goma</p>
+<p>Images hébergées sur Cloudinary</p>
+</footer>
+
+<!-- Fenêtre en grand -->
+<div id="grand" onclick="fermer()">
+<span onclick="fermer()">×</span>
+<img id="photoGrand" src="">
+</div>
+
+<script>
+function ouvrir(src){
+  document.getElementById('photoGrand').src = src;
+  document.getElementById('grand').style.display = 'flex';
+}
+function fermer(){
+  document.getElementById('grand').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
